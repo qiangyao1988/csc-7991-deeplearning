@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tqe-za-k13">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Core ML Test-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMN-xh-Q2Z">
+                                <rect key="frame" x="138.66666666666666" y="412.66666666666669" width="98" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Start Test"/>
+                                <connections>
+                                    <segue destination="Ids-ww-b8E" kind="show" id="nnD-OR-Pg8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xMN-xh-Q2Z" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="6T4-rp-RdW"/>
+                            <constraint firstItem="xMN-xh-Q2Z" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pxY-uq-c6R"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Core ML Test" id="8P5-k0-58P"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="-512.06896551724139"/>
+        </scene>
+        <!--Model Testing-->
+        <scene sceneID="3Yt-eN-KUV">
+            <objects>
+                <viewController id="Ids-ww-b8E" customClass="MLViewController" customModule="CoreMLTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5If-fb-vsf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="tPu-cT-0HB">
+                                <rect key="frame" x="16" y="88" width="343" height="690"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cCM-eu-MYw">
+                                <rect key="frame" x="112" y="432" width="151" height="2"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tPu-cT-0HB" firstAttribute="leading" secondItem="5If-fb-vsf" secondAttribute="leadingMargin" id="0UZ-VX-16r"/>
+                            <constraint firstItem="tPu-cT-0HB" firstAttribute="top" secondItem="jxD-o7-OU9" secondAttribute="top" id="ASo-eq-XI4"/>
+                            <constraint firstItem="tPu-cT-0HB" firstAttribute="centerX" secondItem="jxD-o7-OU9" secondAttribute="centerX" id="KOx-zm-Ack"/>
+                            <constraint firstItem="cCM-eu-MYw" firstAttribute="leading" secondItem="5If-fb-vsf" secondAttribute="leadingMargin" constant="96" id="Kxa-9S-nh7"/>
+                            <constraint firstItem="tPu-cT-0HB" firstAttribute="centerY" secondItem="jxD-o7-OU9" secondAttribute="centerY" id="b60-Td-Yhm"/>
+                            <constraint firstItem="cCM-eu-MYw" firstAttribute="centerX" secondItem="jxD-o7-OU9" secondAttribute="centerX" id="bk5-m5-2fk"/>
+                            <constraint firstItem="cCM-eu-MYw" firstAttribute="centerY" secondItem="jxD-o7-OU9" secondAttribute="centerY" id="xF9-qt-NH9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jxD-o7-OU9"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Model Testing" id="ZFg-Eg-wbY"/>
+                    <connections>
+                        <outlet property="mlProgressView" destination="cCM-eu-MYw" id="QpZ-nE-2pG"/>
+                        <outlet property="resultTextView" destination="tPu-cT-0HB" id="dzl-86-Tmp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iMk-7H-kek" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="952.79999999999995" y="-512.06896551724139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SaG-ky-tCV">
+            <objects>
+                <navigationController id="tqe-za-k13" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="x2n-wJ-GQz">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="qOU-49-nF1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kHb-yt-YIR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-682" y="-512"/>
+        </scene>
+    </scenes>
+</document>
